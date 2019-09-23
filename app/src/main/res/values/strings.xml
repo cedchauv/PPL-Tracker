@@ -1,4 +1,16 @@
 <resources>
     <string name="app_name">PPL Tracker</string>
     <string name="button_Pull">Pull</string>
+    <string name="title_activity_weights">WeightsActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="pull_weights">  PULL WEIGHTS</string>
+    <string name="deadlift">Deadlift:</string>
+    <string name="pull">Pull</string>
+    <string name="weights">Weights</string>
+    <string name="barbellrow">Barbell Row:</string>
+    <string name="cablerow">Cable Row:</string>
+    <string name="facepull">Facepull:</string>
+    <string name="curl">Curl:</string>
+    <string name="pullups">Pullups:</string>
 </resources>

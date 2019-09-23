@@ -13,8 +13,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-    public void pullbutton(View view){
-        Intent pullintent = new Intent(this, PullActivity.class);
-        startActivity(pullintent);
+    public void pullButton(View view){
+        Intent pullIntent = new Intent(this, PullActivity.class);
+        startActivity(pullIntent);
+    }
+    public void weightsButton(View view){
+        Intent weightsIntent = new Intent(this, WeightsActivity.class);
+        startActivity(weightsIntent);
     }
 }
