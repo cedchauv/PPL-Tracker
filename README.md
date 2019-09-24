@@ -2,6 +2,7 @@
 
 An android app to track PPL workouts.
 
+
 Intended Features:
 - Workout/Day tracking
 - Guided workouts
@@ -19,3 +20,6 @@ Weights: For adjusting saved weight for each exercise, e.g. 60kg Bench, 40kg OHP
 Workouts: Show next exercise sets x reps @ weight + rest time. (Timer?). After each exercise - ask if add weight?
 
 History: Track workout days and weights?
+
+
+DISCLAIMER: First time building an android app and using Android Studio, also no focus on design/UI. 
