@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/deadlift"
+        android:id="@+id/exerciseText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="140dp"
@@ -27,13 +27,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/deadliftKG"
+        android:id="@+id/exerciseKG"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="95dp"
         android:layout_marginTop="148dp"
         android:text="@string/dlKg"
-        app:layout_constraintStart_toStartOf="@+id/deadlift"
+        app:layout_constraintStart_toStartOf="@+id/exerciseText"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -42,7 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="164dp"
         android:layout_marginTop="252dp"
-        android:text="3:00"
+        android:text="180"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -57,4 +57,34 @@
         android:text="@string/rest"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/sets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="171dp"
+        android:layout_marginTop="38dp"
+        android:text="@string/sets"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/exerciseText" />
+
+    <TextView
+        android:id="@+id/currentSet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="38dp"
+        android:text="1"
+        app:layout_constraintStart_toStartOf="@+id/sets"
+        app:layout_constraintTop_toBottomOf="@+id/exerciseText" />
+
+    <TextView
+        android:id="@+id/maxSet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="38dp"
+        android:text="3"
+        app:layout_constraintStart_toEndOf="@+id/sets"
+        app:layout_constraintTop_toBottomOf="@+id/exerciseText" />
 </androidx.constraintlayout.widget.ConstraintLayout>
