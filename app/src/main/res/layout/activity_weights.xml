@@ -29,13 +29,13 @@
 
     <EditText
         android:id="@+id/Deadlift_Weight"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="50dp"
+        android:layout_height="42dp"
         android:layout_marginStart="76dp"
         android:layout_marginTop="20dp"
         android:ems="5"
         android:inputType="number"
-        android:text="@string/dlKg"
+        android:text="@string/saved_dlKg"
         app:layout_constraintStart_toEndOf="@+id/DeadLift"
         app:layout_constraintTop_toBottomOf="@+id/pullText" />
 
@@ -51,7 +51,7 @@
 
     <EditText
         android:id="@+id/BBRow_Weight"
-        android:layout_width="40dp"
+        android:layout_width="47dp"
         android:layout_height="40dp"
         android:layout_marginStart="76dp"
         android:layout_marginTop="60dp"

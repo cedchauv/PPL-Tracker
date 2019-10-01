@@ -4,9 +4,9 @@ public class Exercise {
 
     private String name;
     private int maxSet;
-    private double weight;
+    private float weight;
 
-    public Exercise(String n, int max, double w){
+    public Exercise(String n, int max, float w){
         name = n;
         maxSet = max;
         weight = w;
@@ -20,9 +20,10 @@ public class Exercise {
         return maxSet;
     }
 
-    public double getWeight() {
+    public float getWeight() {
         return weight;
     }
+
     public void addWeight(){
         weight += weight + 2.5;
     }
