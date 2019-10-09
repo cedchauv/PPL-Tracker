@@ -32,7 +32,7 @@
         android:layout_width="50dp"
         android:layout_height="42dp"
         android:layout_marginStart="76dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="18dp"
         android:ems="5"
         android:inputType="number"
         android:text="@string/saved_dlKg"
@@ -51,10 +51,10 @@
 
     <EditText
         android:id="@+id/BBRow_Weight"
-        android:layout_width="47dp"
+        android:layout_width="50dp"
         android:layout_height="40dp"
         android:layout_marginStart="76dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="62dp"
         android:ems="5"
         android:inputType="number"
         android:text="@string/bbrKg"
@@ -65,7 +65,7 @@
         android:id="@+id/pullups"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="128dp"
+        android:layout_marginStart="131dp"
         android:layout_marginTop="24dp"
         android:text="@string/pullups"
         app:layout_constraintStart_toStartOf="parent"
@@ -75,7 +75,7 @@
         android:id="@+id/cableRow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="108dp"
+        android:layout_marginStart="110dp"
         android:layout_marginTop="24dp"
         android:text="@string/cablerow"
         app:layout_constraintStart_toStartOf="parent"
@@ -100,5 +100,49 @@
         android:text="@string/curl"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/facePulls" />
+
+    <EditText
+        android:id="@+id/pullup_weight"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="4dp"
+        android:ems="5"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toEndOf="@+id/pullups"
+        app:layout_constraintTop_toBottomOf="@+id/BBRow_Weight" />
+
+    <EditText
+        android:id="@+id/cable_weight"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@+id/cableRow"
+        app:layout_constraintTop_toBottomOf="@+id/pullup_weight" />
+
+    <EditText
+        android:id="@+id/face_weight"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@+id/facePulls"
+        app:layout_constraintTop_toBottomOf="@+id/cable_weight" />
+
+    <EditText
+        android:id="@+id/curl_weight"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="3dp"
+        android:ems="5"
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@+id/curls"
+        app:layout_constraintTop_toBottomOf="@+id/face_weight" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
