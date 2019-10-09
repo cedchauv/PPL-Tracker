@@ -5,12 +5,17 @@ public class Exercise {
     private String name;
     private int maxSet;
     private float weight;
+    private String key;
 
-    public Exercise(String n, int max, float w){
+
+    public Exercise(String n, int max, float w, String wKey){
         name = n;
         maxSet = max;
         weight = w;
+        key = wKey;
     }
+
+    public String getKey(){ return key; }
 
     public String getName() {
         return name;
@@ -24,7 +29,4 @@ public class Exercise {
         return weight;
     }
 
-    public void addWeight(){
-        weight += weight + 2.5;
-    }
 }
