@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(pullIntent);
     }
     public void weightsButton(View view){
-        Intent weightsIntent = new Intent(this, WeightsActivity.class);
+        Intent weightsIntent = new Intent(this, WeightSettings.class);
         startActivity(weightsIntent);
     }
 }

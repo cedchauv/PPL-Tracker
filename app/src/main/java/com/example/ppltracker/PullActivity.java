@@ -1,42 +1,12 @@
 package com.example.ppltracker;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
-import android.content.DialogInterface;
-import android.content.SharedPreferences;
-import android.media.MediaPlayer;
+
 import android.os.Bundle;
-import android.os.CountDownTimer;
-import android.provider.Settings;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
 
-import java.util.ArrayList;
 
 public class PullActivity extends exerciseDay {
- /*   private TextView countdownText;
-    private MediaPlayer mp;
-
-    private TextView currentSetText;
-    private TextView maxSetText;
-    private TextView exerciseText;
-    private TextView exerciseKg;
-    private int currentSet = 1;
-    private int maxSet;
-    private int count = 0;
-    private ArrayList<Exercise> exercises = new ArrayList<>();
-
-    private CountDownTimer countdownTimer;
-    private long msLeft = 18000;
-    private boolean timerOn;
-
-    private SharedPreferences prefs;
-    private SharedPreferences.Editor editor;
-    private AlertDialog alert;*/
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

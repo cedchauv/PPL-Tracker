@@ -9,8 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".WeightsActivity"
-            android:parentActivityName=".MainActivity"></activity>
+        <activity
+            android:name=".WeightSettings"
+            android:label="@string/title_activity_weight_settings"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".PullWeightsActivity"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".PullActivity"
             android:parentActivityName=".MainActivity" />

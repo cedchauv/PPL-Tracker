@@ -30,7 +30,7 @@ public abstract class exerciseDay extends AppCompatActivity {
     protected ArrayList<Exercise> exercises = new ArrayList<>();
 
     protected CountDownTimer countdownTimer;
-    protected long msLeft = 18000;
+    protected long msLeft = 180000;
     protected boolean timerOn;
 
     protected SharedPreferences prefs;
@@ -53,7 +53,7 @@ public abstract class exerciseDay extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 // Adds 2.5kg to current exercise and closes the dialog
                 editor.putFloat(exercises.get(count).getKey(), (prefs.getFloat(exercises.get(count).getKey(), 10f) + 2.5f));
-                editor.commit();
+                editor.apply();
                 dialog.dismiss();
             }
         });
@@ -79,6 +79,12 @@ public abstract class exerciseDay extends AppCompatActivity {
     protected abstract void constructExercises();
 
     protected abstract void toggleTimer(View View);
+     /* if (timerOn){
+        stopTimer();
+    }
+        else{
+        startTimer();
+    }*/
     protected void startTimer(){
         timerOn = true;
         countdownTimer = new CountDownTimer(msLeft, 1000) {
@@ -96,7 +102,7 @@ public abstract class exerciseDay extends AppCompatActivity {
                 }
                 else{
                     countdownText.setText("90");
-                    msLeft = 9000;
+                    msLeft = 90000;
                 }
                 if (currentSet == maxSet){
                     currentSet = 1;
