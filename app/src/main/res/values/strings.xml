@@ -21,6 +21,19 @@
     <string name="bbrExercise">BarB Row 5x5 at </string>
     <string name="faceExercise">Facepulls 5x15 at </string>
     <string name="curlExercise">Bi-Curls 4x12 at </string>
+    <string name="title_activity_weight_settings">WeightSettings</string>
+    <string name="tab_text_1">PULL</string>
+    <string name="tab_text_2">PUSH</string>
+    <string name="BenchHExercise">Bench 5x5 at</string>
+    <string name="ohpLExercise">OHP 3x10 at</string>
+    <string name="ohpHExercise">OHP 5x5 at</string>
+    <string name="benchLExercise">Bench 3x10 at</string>
+    <string name="inclineExercise">Incline 3x10 at</string>
+    <string name="dipsExercise">Dips 3x8 at</string>
+    <string name="pushdownExercise">Pushdown/LatRaise(SS) 3x12 at</string>
+    <string name="suitcaseExercise">Suitcase Carry 2x1min at</string>
+
+    <string name="tab_text_3">LEGS</string>
 
 
 </resources>
