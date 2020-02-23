@@ -30,7 +30,7 @@ public abstract class exerciseDay extends AppCompatActivity {
     protected ArrayList<Exercise> exercises = new ArrayList<>();
 
     protected CountDownTimer countdownTimer;
-    protected long msLeft = 180;
+    protected long msLeft = 180000;
     protected boolean timerOn;
 
     protected SharedPreferences prefs;
@@ -123,7 +123,7 @@ public abstract class exerciseDay extends AppCompatActivity {
                 }
                 else{
                     countdownText.setText("90");
-                    msLeft = 90;
+                    msLeft = 90000;
                 }
                 if (currentSet == maxSet){
                     alert.show();
