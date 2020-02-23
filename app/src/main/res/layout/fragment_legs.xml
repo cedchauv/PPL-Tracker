@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout  xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.main.PushFragment">
-
+    tools:context=".ui.main.LegsFragment">
     <TextView
         android:id="@+id/section_label"
         android:layout_width="wrap_content"
@@ -21,50 +20,50 @@
         tools:layout_constraintTop_creator="1" />
 
     <TextView
-        android:id="@+id/pushText"
-        android:layout_width="105dp"
-        android:layout_height="41dp"
+        android:id="@+id/legsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="150dp"
         android:layout_marginTop="108dp"
         android:gravity="center_horizontal"
-        android:text="@string/push_weights"
+        android:text="LEGS WEIGHTS"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/HeavyBench"
+        android:id="@+id/Squat"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="180dp"
         android:layout_marginEnd="220dp"
-        android:text="@string/HeavyBench"
+        android:text="Squat:"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/HeavyBench_Weight"
+        android:id="@+id/Squat_Weight"
         android:layout_width="50dp"
-        android:layout_height="42dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="46dp"
         android:layout_marginTop="165dp"
         android:ems="5"
         android:inputType="number"
         android:text="@string/saved_dlKg"
-        app:layout_constraintStart_toEndOf="@+id/HeavyBench"
+        app:layout_constraintStart_toEndOf="@+id/Squat"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/LightBench"
+        android:id="@+id/RDL"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="220dp"
-        android:text="@string/LightBench"
+        android:text="RDL:"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/HeavyBench" />
+        app:layout_constraintTop_toBottomOf="@+id/Squat" />
 
     <EditText
-        android:id="@+id/LightBench_Weight"
+        android:id="@+id/rdl_Weight"
         android:layout_width="50dp"
         android:layout_height="40dp"
         android:layout_marginStart="46dp"
@@ -72,92 +71,72 @@
         android:ems="5"
         android:inputType="number"
         android:text="@string/bbrKg"
-        app:layout_constraintStart_toEndOf="@+id/LightBench"
-        app:layout_constraintTop_toBottomOf="@+id/HeavyBench_Weight" />
+        app:layout_constraintStart_toEndOf="@+id/RDL"
+        app:layout_constraintTop_toBottomOf="@+id/Squat_Weight" />
 
     <TextView
-        android:id="@+id/HeavyOhp"
+        android:id="@+id/LegPress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="220dp"
-        android:text="@string/HeavyOhp"
+        android:text="LegPress:"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LightBench" />
+        app:layout_constraintTop_toBottomOf="@+id/RDL" />
 
     <TextView
-        android:id="@+id/LightOhp"
+        android:id="@+id/Hamcurl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="220dp"
-        android:text="@string/LightOhp"
+        android:text="Hamcurl:"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/HeavyOhp" />
+        app:layout_constraintTop_toBottomOf="@+id/LegPress" />
 
-    <TextView
-        android:id="@+id/IncBench"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="220dp"
-        android:text="@string/InclineBench"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LightOhp" />
-
-    <TextView
-        android:id="@+id/Dips"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="220dp"
-        android:text="@string/Dips"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/IncBench" />
 
     <EditText
-        android:id="@+id/HeavyOHP_weight"
+        android:id="@+id/LegP_weight"
         android:layout_width="50dp"
         android:layout_height="40dp"
         android:layout_marginStart="46dp"
         android:layout_marginTop="4dp"
         android:ems="5"
         android:inputType="numberDecimal"
-        app:layout_constraintStart_toEndOf="@+id/HeavyOhp"
-        app:layout_constraintTop_toBottomOf="@+id/LightBench_Weight" />
+        app:layout_constraintStart_toEndOf="@+id/LegPress"
+        app:layout_constraintTop_toBottomOf="@+id/rdl_Weight" />
 
     <EditText
-        android:id="@+id/LightOhp_weight"
+        android:id="@+id/Hamcurl_weight"
         android:layout_width="50dp"
         android:layout_height="40dp"
         android:layout_marginStart="46dp"
         android:layout_marginTop="4dp"
         android:ems="10"
         android:inputType="number"
-        app:layout_constraintStart_toEndOf="@+id/LightOhp"
-        app:layout_constraintTop_toBottomOf="@+id/HeavyOHP_weight" />
+        app:layout_constraintStart_toEndOf="@+id/Hamcurl"
+        app:layout_constraintTop_toBottomOf="@+id/LegP_weight" />
 
     <EditText
-        android:id="@+id/inc_weight"
+        android:id="@+id/calves_weight"
         android:layout_width="50dp"
         android:layout_height="40dp"
         android:layout_marginStart="46dp"
         android:layout_marginTop="4dp"
         android:ems="10"
         android:inputType="number"
-        app:layout_constraintStart_toEndOf="@+id/IncBench"
-        app:layout_constraintTop_toBottomOf="@+id/LightOhp_weight" />
+        app:layout_constraintStart_toEndOf="@+id/Calves"
+        app:layout_constraintTop_toBottomOf="@+id/Hamcurl_weight" />
 
-    <EditText
-        android:id="@+id/Dips_weight"
-        android:layout_width="50dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="46dp"
-        android:layout_marginTop="4dp"
-        android:ems="5"
-        android:inputType="number"
-        app:layout_constraintStart_toEndOf="@+id/Dips"
-        app:layout_constraintTop_toBottomOf="@+id/inc_weight" />
+    <TextView
+        android:id="@+id/Calves"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="220dp"
+        android:text="Calves:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Hamcurl" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

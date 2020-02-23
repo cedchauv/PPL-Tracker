@@ -30,12 +30,13 @@ public abstract class exerciseDay extends AppCompatActivity {
     protected ArrayList<Exercise> exercises = new ArrayList<>();
 
     protected CountDownTimer countdownTimer;
-    protected long msLeft = 180000;
+    protected long msLeft = 180;
     protected boolean timerOn;
 
     protected SharedPreferences prefs;
     protected SharedPreferences.Editor editor;
     protected AlertDialog alert;
+    protected AlertDialog quit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -52,19 +53,35 @@ public abstract class exerciseDay extends AppCompatActivity {
         builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
                 // Adds 2.5kg to current exercise and closes the dialog
-                editor.putFloat(exercises.get(count).getKey(), (prefs.getFloat(exercises.get(count).getKey(), 10f) + 2.5f));
-                editor.apply();
-                dialog.dismiss();
+                editor.putFloat(exercises.get(count-1).getKey(), (prefs.getFloat(exercises.get(count-1).getKey(), 10f) + 2.5f));
+                editor.commit();
+                dialog.dismiss(); if(count == exercises.size()){
+                    quit.show();
+                }
             }
         });
         builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                // Does nothing but close the dialog
+                // Does nothing but close the dialog, unless last exercise
+                if(count == exercises.size()){
+                                 quit.show();
+                }
                 dialog.dismiss();
             }
         });
         alert = builder.create();
+        AlertDialog.Builder builder2 = new AlertDialog.Builder(this);
+        builder2.setTitle("Completed DAY!");
+        builder2.setMessage("Good job!");
+        builder2.setPositiveButton("OK",  new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Adds 2.5kg to current exercise and closes the dialog
+                        dialog.dismiss();
+                        finishThis();
+                    }
+        });
+        quit = builder2.create();
 
          /* ADD BELOW TO SUBCLASS METHOD!
          ----------------------------------
@@ -77,6 +94,10 @@ public abstract class exerciseDay extends AppCompatActivity {
         setExerciseTexts();*/
     }
     protected abstract void constructExercises();
+
+    private void finishThis(){
+        this.finish();
+    }
 
     protected abstract void toggleTimer(View View);
      /* if (timerOn){
@@ -102,13 +123,15 @@ public abstract class exerciseDay extends AppCompatActivity {
                 }
                 else{
                     countdownText.setText("90");
-                    msLeft = 90000;
+                    msLeft = 90;
                 }
                 if (currentSet == maxSet){
-                    currentSet = 1;
                     alert.show();
                     count++;
-                    setExerciseTexts();
+                    if(count != exercises.size()) {
+                        currentSet = 1;
+                        setExerciseTexts();
+                    }
                 }
                 else {
                     currentSet++;

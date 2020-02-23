@@ -3,40 +3,41 @@ package com.example.ppltracker.ui.main;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import androidx.annotation.Nullable;
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
-
 import com.example.ppltracker.R;
 import com.example.ppltracker.TextListener;
 import com.example.ppltracker.writeInterface;
 
 
-public class PullFragment extends Fragment implements writeInterface {
+public class LegsFragment extends Fragment implements writeInterface {
 
     private SharedPreferences prefs;
     private SharedPreferences.Editor editor;
-    private EditText dlKG;
-    private EditText bbrKG;
-    private EditText pullupKG;
-    private EditText cableKG;
-    private EditText faceKG;
-    private EditText curlKG;
+    private EditText squatKG;
+    private EditText rdlKG;
+    private EditText legPressKG;
+    private EditText hamcurlKG;
+    private EditText calfKG;
+
 
     private static final String ARG_SECTION_NUMBER = "section_number";
 
     private PageViewModel pageViewModel;
 
-    public static PullFragment newInstance(int index) {
-        PullFragment fragment = new PullFragment();
+    public static LegsFragment newInstance(int index) {
+        LegsFragment fragment = new LegsFragment();
         Bundle bundle = new Bundle();
         bundle.putInt(ARG_SECTION_NUMBER, index);
         fragment.setArguments(bundle);
@@ -65,7 +66,7 @@ public class PullFragment extends Fragment implements writeInterface {
     public View onCreateView(
             @NonNull LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.pullfragment_weight_settings, container, false);
+        View root = inflater.inflate(R.layout.fragment_legs, container, false);
         final TextView textView = root.findViewById(R.id.section_label);
         pageViewModel.getText().observe(this, new Observer<String>() {
             @Override
@@ -80,28 +81,24 @@ public class PullFragment extends Fragment implements writeInterface {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        dlKG = getView().findViewById(R.id.Deadlift_Weight);
-        dlKG.addTextChangedListener(new TextListener("DL_KG", dlKG, this));
-        dlKG.setText(Float.toString(prefs.getFloat("DL_KG", 70f)));
+        squatKG = getView().findViewById(R.id.Squat_Weight);
+        squatKG.addTextChangedListener(new TextListener("SQUAT_KG", squatKG, this));
+        squatKG.setText(Float.toString(prefs.getFloat("SQUAT_KG", 70f)));
 
-        bbrKG = getView().findViewById(R.id.BBRow_Weight);
-        bbrKG.addTextChangedListener(new TextListener("BBR_KG", bbrKG, this));
-    bbrKG.setText(Float.toString(prefs.getFloat("BBE_KG", 30f)));
+        rdlKG = getView().findViewById(R.id.rdl_Weight);
+        rdlKG.addTextChangedListener(new TextListener("RDL_KG", rdlKG, this));
+        rdlKG.setText(Float.toString(prefs.getFloat("RDL_KG", 30f)));
 
-        pullupKG = getView().findViewById(R.id.pullup_weight);
-        pullupKG.addTextChangedListener(new TextListener("pullUp_KG", pullupKG, this));
-        pullupKG.setText(Float.toString(prefs.getFloat("pullUp_KG", 0f)));
+        legPressKG = getView().findViewById(R.id.LegP_weight);
+        legPressKG.addTextChangedListener(new TextListener("legP_KG", legPressKG, this));
+        legPressKG.setText(Float.toString(prefs.getFloat("legP_KG", 0f)));
 
-        cableKG = getView().findViewById(R.id.cable_weight);
-        cableKG.addTextChangedListener(new TextListener("cableRow_KG", cableKG, this));
-        cableKG.setText(Float.toString(prefs.getFloat("cableRow_KG", 40f)));
+        hamcurlKG = getView().findViewById(R.id.Hamcurl_weight);
+        hamcurlKG.addTextChangedListener(new TextListener("hamcurl_KG", hamcurlKG, this));
+        hamcurlKG.setText(Float.toString(prefs.getFloat("hamcurl_KG", 40f)));
 
-        faceKG = getView().findViewById(R.id.face_weight);
-        faceKG.addTextChangedListener(new TextListener("face_KG", faceKG, this));
-        faceKG.setText(Float.toString(prefs.getFloat("face_KG", 15f)));
-
-        curlKG = getView().findViewById(R.id.curl_weight);
-        curlKG.addTextChangedListener(new TextListener("curl_KG", curlKG, this));
-        curlKG.setText(Float.toString(prefs.getFloat("curl_KG", 8f)));
+        calfKG = getView().findViewById(R.id.calves_weight);
+        calfKG.addTextChangedListener(new TextListener("calf_KG", calfKG, this));
+        calfKG.setText(Float.toString(prefs.getFloat("calf_KG", 15f)));
     }
 }

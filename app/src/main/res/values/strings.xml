@@ -23,7 +23,7 @@
     <string name="curlExercise">Bi-Curls 4x12 at </string>
     <string name="title_activity_weight_settings">WeightSettings</string>
     <string name="tab_text_1">PULL</string>
-    <string name="tab_text_2">PUSH</string>
+
     <string name="BenchHExercise">Bench 5x5 at</string>
     <string name="ohpLExercise">OHP 3x10 at</string>
     <string name="ohpHExercise">OHP 5x5 at</string>
@@ -33,7 +33,26 @@
     <string name="pushdownExercise">Pushdown/LatRaise(SS) 3x12 at</string>
     <string name="suitcaseExercise">Suitcase Carry 2x1min at</string>
 
+    <string name="tab_text_2">PUSH</string>
+    <string name="push_weights"> PUSH WEIGHTS</string>
+    <string name="HeavyBench">Bench 5x5:</string>
+    <string name="LightBench">Bench 3x8:</string>
+    <string name="HeavyOhp">OHP 5x5:</string>
+    <string name="LightOhp">OHP 3x8:</string>
+    <string name="InclineBench">IncBench 3x8:</string>
+    <string name="Dips">Dips 3x5:</string>
+    <string name="LatRaise">LatRaise:</string>
+    <string name="Pushdown">Pushdown:</string>
+    <string name="Suitcase">Suitcase:</string>
+
     <string name="tab_text_3">LEGS</string>
+    <string name="squatExercise">Squat 5x5:</string>
+    <string name="romanianExercise">RDL 3x10:</string>
+    <string name="legpressExercise">LegPress 3x8:</string>
+    <string name="hamcurlExercise">HamCurl 3x8:</string>
+    <string name="calfExercise">Calf 3x10:</string>
+    <string name="hanglegExercise">HangLeg 3x7:</string>
+    
 
 
 </resources>

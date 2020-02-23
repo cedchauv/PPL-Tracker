@@ -34,9 +34,9 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
                 return new PullFragment();
             case 1:
                 return new PushFragment();
-            //case 3:
-        //    return new LegsFragment();
-              default:
+            case 2:
+                return new LegsFragment();
+            default:
                 return new Fragment();
         }
 

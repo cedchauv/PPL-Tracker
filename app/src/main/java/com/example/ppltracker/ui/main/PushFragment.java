@@ -22,24 +22,24 @@ import com.example.ppltracker.writeInterface;
 public class PushFragment extends Fragment implements writeInterface {
     private SharedPreferences prefs;
     private SharedPreferences.Editor editor;
-    private EditText dlKG;
-    private EditText bbrKG;
-    private EditText pullupKG;
-    private EditText cableKG;
-    private EditText faceKG;
-    private EditText curlKG;
+    private EditText hbenchKG;
+    private EditText lbenchkg;
+    private EditText hohpkg;
+    private EditText lohpKG;
+    private EditText incKG;
+    private EditText dipKG;
 
-    //private static final String ARG_SECTION_NUMBER = "section_number";
+    private static final String ARG_SECTION_NUMBER = "section_number";
 
-    //private PageViewModel pageViewModel;
+    private PageViewModel pageViewModel;
 
-    /*public static PushFragment newInstance(int index) {
+    public static PushFragment newInstance(int index) {
         PushFragment fragment = new PushFragment();
         Bundle bundle = new Bundle();
-      //  bundle.putInt(ARG_SECTION_NUMBER, index);
+        bundle.putInt(ARG_SECTION_NUMBER, index);
         fragment.setArguments(bundle);
         return fragment;
-    }*/
+    }
     @Override
     public void writeFloat(String key, float data){
         editor.putFloat(key, data);
@@ -48,12 +48,12 @@ public class PushFragment extends Fragment implements writeInterface {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //pageViewModel = ViewModelProviders.of(this).get(PageViewModel.class);
-      //  int index = 1;
-       // if (getArguments() != null) {
-          //  index = getArguments().getInt(ARG_SECTION_NUMBER);
-        //}
-        //pageViewModel.setIndex(index);
+        pageViewModel = ViewModelProviders.of(this).get(PageViewModel.class);
+        int index = 1;
+        if (getArguments() != null) {
+            index = getArguments().getInt(ARG_SECTION_NUMBER);
+        }
+        pageViewModel.setIndex(index);
 
         prefs = this.getActivity().getSharedPreferences("PPL_prefs.xml", Context.MODE_PRIVATE);
         editor = prefs.edit();
@@ -62,13 +62,13 @@ public class PushFragment extends Fragment implements writeInterface {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.pushfragment_weight_settings, container, false);
-        //final TextView textView = root.findViewById(R.id.section_label);
-        //pageViewModel.getText().observe(this, new Observer<String>() {
-           // @Override
-          //  public void onChanged(@Nullable String s) {
+        final TextView textView = root.findViewById(R.id.section_label);
+        pageViewModel.getText().observe(this, new Observer<String>() {
+            @Override
+           public void onChanged(@Nullable String s) {
                 //textView.setText(s);
-           // }
-        //});
+           }
+        });
 
         return root;
     }
@@ -76,29 +76,29 @@ public class PushFragment extends Fragment implements writeInterface {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-/*        dlKG = getView().findViewById(R.id.Deadlift_Weight);
-        dlKG.addTextChangedListener(new TextListener("DL_KG", dlKG, this));
-        dlKG.setText(Float.toString(prefs.getFloat("DL_KG", 70f)));
+        hbenchKG = getView().findViewById(R.id.HeavyBench_Weight);
+        hbenchKG.addTextChangedListener(new TextListener("HB_KG", hbenchKG, this));
+        hbenchKG.setText(Float.toString(prefs.getFloat("HB_KG", 60f)));
 
-        bbrKG = getView().findViewById(R.id.BBRow_Weight);
-        bbrKG.addTextChangedListener(new TextListener("BBR_KG", bbrKG, this));
-        bbrKG.setText(Float.toString(prefs.getFloat("BBE_KG", 30f)));
+        lbenchkg = getView().findViewById(R.id.LightBench_Weight);
+        lbenchkg.addTextChangedListener(new TextListener("LB_KG", lbenchkg, this));
+        lbenchkg.setText(Float.toString(prefs.getFloat("LB_KG", 40f)));
 
-        pullupKG = getView().findViewById(R.id.pullup_weight);
-        pullupKG.addTextChangedListener(new TextListener("pullUp_KG", pullupKG, this));
-        pullupKG.setText(Float.toString(prefs.getFloat("pullUp_KG", 0f)));
+        hohpkg = getView().findViewById(R.id.HeavyOHP_weight);
+        hohpkg.addTextChangedListener(new TextListener("hohp_KG", hohpkg, this));
+        hohpkg.setText(Float.toString(prefs.getFloat("hohp_KG", 40f)));
 
-        cableKG = getView().findViewById(R.id.cable_weight);
-        cableKG.addTextChangedListener(new TextListener("cableRow_KG", cableKG, this));
-        cableKG.setText(Float.toString(prefs.getFloat("cableRow_KG", 40f)));
+        lohpKG = getView().findViewById(R.id.LightOhp_weight);
+        lohpKG.addTextChangedListener(new TextListener("lohp_KG", lohpKG, this));
+        lohpKG.setText(Float.toString(prefs.getFloat("lohp_KG", 30f)));
 
-        faceKG = getView().findViewById(R.id.face_weight);
-        faceKG.addTextChangedListener(new TextListener("face_KG", faceKG, this));
-        faceKG.setText(Float.toString(prefs.getFloat("face_KG", 15f)));
+        incKG = getView().findViewById(R.id.inc_weight);
+        incKG.addTextChangedListener(new TextListener("inc_KG", incKG, this));
+        incKG.setText(Float.toString(prefs.getFloat("inc_KG", 12f)));
 
-        curlKG = getView().findViewById(R.id.curl_weight);
-        curlKG.addTextChangedListener(new TextListener("curl_KG", curlKG, this));
-        curlKG.setText(Float.toString(prefs.getFloat("curl_KG", 8f)));
-    */}
+        dipKG = getView().findViewById(R.id.Dips_weight);
+        dipKG.addTextChangedListener(new TextListener("dips_KG", dipKG, this));
+        dipKG.setText(Float.toString(prefs.getFloat("dips_KG", 0f)));
+    }
 
 }

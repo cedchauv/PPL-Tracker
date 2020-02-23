@@ -28,7 +28,9 @@ public class TextListener implements TextWatcher {
 
     @Override
     public void afterTextChanged(Editable s) {
-        act.writeFloat(key, Float.parseFloat(text.getText().toString()));
-
+        if(s.length() != 0)
+        {
+            act.writeFloat(key, Float.parseFloat(text.getText().toString()));
+        }
     }
 }

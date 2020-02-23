@@ -37,7 +37,7 @@ public class PullActivity extends exerciseDay {
         exercises.add(new Exercise(getString(R.string.pullupExercise), 3, prefs.getFloat("pullUp_KG",0.0f),"pullUp_KG"));
         exercises.add(new Exercise(getString(R.string.cableRowExercise), 3, prefs.getFloat("cableRow_KG",45.0f), "cableRow_KG"));
         exercises.add(new Exercise(getString(R.string.faceExercise), 5, prefs.getFloat("face_KG",15f), "face_KG"));
-        exercises.add(new Exercise(getString(R.string.curlExercise),4, prefs.getFloat("curl_KG",8f),"curl_KG"));
+        exercises.add(new Exercise(getString(R.string.curlExercise),3, prefs.getFloat("curl_KG",8f),"curl_KG"));
     }
     @Override
     public void toggleTimer(View view){
